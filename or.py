@@ -7,13 +7,13 @@ def main(data, modelName, plotName, eta, epochs):
     df_OR = pd.DataFrame(data)
     X, y = prepare_data(df_OR)
 
-    model_or = Perceptron(eta=eta, epochs=epochs)
-    model_or.fit(X, y)
+    model = Perceptron(eta=eta, epochs=epochs)
+    model.fit(X, y)
 
-    _ = model_or.total_loss()
+    _ = model.total_loss()
 
-    model_or.save(filename=modelName, model_dir="model")
-    save_plot(df_OR, model_or, filename=plotName)
+    model.save(filename=modelName, model_dir="model")
+    save_plot(df_OR, model, filename=plotName)
 
 if __name__ == "__main__":
     OR = {
@@ -36,12 +36,12 @@ if __name__ == "__main__":
 # X, y = prepare_data(df_OR)
 # ETA = 0.1
 # EPOCHS = 10
-# model_or = Perceptron(eta = ETA, epochs=EPOCHS)
-# model_or.fit(X,y)
+# model = Perceptron(eta = ETA, epochs=EPOCHS)
+# model.fit(X,y)
 
-# _ = model_or.total_loss()
+# _ = model.total_loss()
 
 
-# model_or.save(filename="or.model", model_dir="model_or")
+# model.save(filename="or.model", model_dir="model")
 
-# save_plot(df_OR, model_or, filename="or.png")
+# save_plot(df_OR, model, filename="or.png")
